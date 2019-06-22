@@ -1,0 +1,167 @@
+ul,ol{
+    list-style-type: none;
+}
+
+.clearfix{
+    clear: both;
+}
+.divider{
+    margin-bottom: 60px;
+}
+
+.nav-link{
+    color: black !important;
+}
+.navbar-nav{
+    margin-left: 450px;
+}
+.content{
+    border: 1px solid #949494;
+    ul{
+        li{
+            float: left;
+            padding: 20px;
+            margin: 0px 110px;
+            display: block;
+            a{
+                color: #4b4949;
+            }
+        }
+    }
+
+}
+hr{
+    background-color: #ff5f02;
+    height: 5px;
+}
+.img{
+    float: left;
+    margin: 40px 60px 0px 200px;
+}
+.rightContent{
+    margin: 40px;
+    overflow: hidden;
+    .titlPart{
+        h3{
+            margin-top: 40px;
+        }
+    }
+}
+.btmtext{
+    margin-bottom: 20px;
+    .text{
+        float: left;
+        text-align: center;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        h5{
+            font-size: 14px;
+        }
+    }
+}
+.bookingPart{
+    
+    a{
+        background-color: #ff5f02;
+        display: block;
+        width: 150px;
+        padding: 10px 30px;
+        color: #fff;
+        font-weight: bold;
+        float: left;
+        margin-right: 30px;
+    }
+}
+.event-info{
+    .col-sm-8 ul{
+        float: left;
+        margin-right: 40px;
+    }
+    h2{
+        margin-bottom: 25px;
+    }
+    p{
+        color: #949494;
+        margin-bottom: 40px;
+    }
+    .available{
+        li{
+            color: #949494;
+            i{
+                padding: 11px;
+                color: #de1b5b;
+            }
+        }
+    }
+}
+
+.weddingimg{
+    img{
+        width: 100%;
+    }
+}
+
+.event-galler{
+    margin-top: 40px;
+    h2{
+        margin-bottom: 20px;
+    }
+}
+
+.mdb-lightbox{
+    figure{
+        float: left;
+        a{
+            img{
+                width: 100%;
+                }
+        }
+    }
+}
+
+.imgtablitle{
+    img{
+        width: 65px;
+        height: 65px;
+        margin: 10px;
+    }
+}
+.orderpart{
+    label{
+        margin-right: 40px;
+    }
+    a{
+        padding: 10px 20px;
+        margin-right: 20px;
+        background-color: #de1b5b;
+        color: #fff;
+    }
+}
+.copyright{
+    font-size: 14px;
+    color: #fff;
+}
+.copyright[_ngcontent-c0]{
+    padding: 40px;
+    margin-right: 0px;
+}
+.social_icon{
+    ul{
+        li{
+            a{
+                background-color: #fff;
+                width: 30px;
+                border-radius: 50%;
+                color: #de1b5b;
+                i{
+                    margin-left: 5px;
+                    padding: 5px;
+                }
+            }
+            a:hover{
+                background-color: #de1b5b;
+                color: #fff;
+            }
+        }
+    }
+}

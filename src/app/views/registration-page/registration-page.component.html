@@ -1,0 +1,44 @@
+<div class="bg">
+    <div class="container">
+      <div class="row">
+        <div class="registration">
+          <h1>Register Now</h1>
+          <form role="form" [formGroup]="ungForm" novalidate>
+          <div class="form-filde">
+              <div class="input-slide">
+                  <input type="text" formControlName="firstName" name="firstName" placeholder="FirstName">
+              </div>
+              <div class="input-slide">
+                  <input type="text" formControlName="lastName" name="lastName" placeholder="LastName">
+              </div>
+              <div class="input-slide">
+                  <input type="text" formControlName="userName" name="userName" placeholder="UserName">
+              </div>
+              <div class="input-slide">
+                  <input type="email"  formControlName="email" name="email" placeholder="Email">
+              </div>
+              <div class="input-slide">
+                  <input type="text"  formControlName="phoneNumber" name="phoneNumber" placeholder="PhoneNumber">
+              </div>
+              <!-- <div class="input-slide">
+                  <input type="text"  formControlName="city" name="city" placeholder="City">
+              </div> -->
+              <div class="input-slide">
+                  <input type="password"  formControlName="password" name="password" placeholder="Password">
+              </div>
+              <div class="input-slide">
+                  <input type="password"  formControlName="confirmPassword" name="confirmPassword" placeholder="ConfirmPassword">
+              </div>
+             
+              <div class="submit-slide">
+                  <input type="submit" class="btn rounded-btn btn-outline-success" [disabled]="ungForm.invalid" (click)="onCreate()" value="Create">
+              </div>&nbsp;
+              
+              <a href="/Login" class="btn-link">Login</a>
+          </div>
+      </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

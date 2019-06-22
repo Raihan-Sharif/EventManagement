@@ -1,0 +1,52 @@
+
+
+
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+    
+  <div class="mt-5">
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/dashboards">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Category</li>
+            </ol>
+            <!-- Example DataTables Card-->
+            <div class="card mb-3">
+                <div class="card-header">
+      
+                    <i class="fa fa-users"></i> Edit Category
+      
+      
+                </div>
+                <div class="card-body">
+                    <form #catForm=ngForm (ngSubmit)="OnSubmit(categoryName)">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="categoryName">Category Name</label>
+                                <input type="text" #categoryName ngModel name="categoryName" class="form-control input-underline input-lg" id="categoryName" value="{{category.categoryName}}" required>
+      
+                            </div>
+                          </div>
+      
+                       
+                        
+                            <button type="submit" class="btn btn-outline-primary" [disabled]="!catForm.valid" >Update</button> &nbsp;
+                            <a class="btn rounded-btn btn-outline-info" [routerLink]="['/Category']">Back</a>
+                    </form>
+      
+      
+      
+                  </div>
+            </div>
+        </div>
+        <!-- /.container-fluid-->
+      </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

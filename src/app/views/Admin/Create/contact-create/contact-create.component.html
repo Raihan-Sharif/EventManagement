@@ -1,0 +1,92 @@
+
+
+   <app-navigation></app-navigation>
+
+   <main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+       
+     <div class="mt-5">
+        <div class="content-wrapper">
+            <div class="container">
+               <ol class="breadcrumb">
+                   <li class="breadcrumb-item">
+                   <a href="/dashboards">Dashboard</a>
+                   </li>
+                   <li class="breadcrumb-item active">Contact-Create</li>
+                   </ol>
+                 <!-- Example DataTables Card-->
+                   <div class="card mb-3">
+                       <div class="card-header">
+             
+                           <i class="fa fa-users"></i> Create Contact
+             
+             
+                       </div>
+                       <div class="card-body">
+                           <form #ContactForm=ngForm (ngSubmit)="OnSubmit(contactName, contactEmail,contactSubject,contactPhone,contactMessage,contactOthers,fkUserID,isRead)">
+                               <div class="row">
+                                   <div class="form-group col-md-8">
+                                       <label for="contactName">Name</label>
+                                       <input type="text" #contactName ngModel  name="contactName" class="form-control input-underline input-lg" id="contactName" required>
+             
+                                   </div>
+                                 </div>
+                                 <div class="row">
+                                   <div class="form-group col-md-8">
+                                           <label for="contactEmail">Email</label>
+                                           <input type="email" #contactEmail ngModel  name="contactEmail" class="form-control input-underline input-lg" id="contactEmail" required>
+                 
+                                       </div>
+                                      </div>
+                                      <div class="row">
+                                       <div class="form-group col-md-8">
+                                          <label for="contactSubject">Subject</label>
+                                          <input type="text" #contactSubject ngModel  name="contactSubject" class="form-control input-underline input-lg" id="contactSubject" required>
+                
+                                      </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="form-group col-md-8">
+                                           <label for="contactPhone">Phone</label>
+                                           <input type="tel" #contactPhone ngModel  name="contactPhone" class="form-control input-underline input-lg" id="contactPhone" required>
+                 
+                                       </div>
+                                      </div>
+                                      <div class="row">
+                                       <div class="form-group col-md-8">
+                                          <label for="contactMessage">Message</label>
+                                          <input type="area" #contactMessage ngModel  name="contactMessage" class="form-control input-underline input-lg" id="contactMessage" required>
+                
+                                        </div>   
+                                      </div>
+                                      <div class="row">
+                                        <div class="form-group col-md-8">
+                                            <label for="contactOthers">Others</label>
+                                            <input type="text" #contactOthers ngModel  name="contactOthers" class="form-control input-underline input-lg" id="contactOthers" required>
+                  
+                                        </div>                  </div>   
+                                        <div class="row">                       <div class="form-group col-md-8">
+                                            <label for="fkUserID">user ID</label>
+                                            <input type="text" #fkUserID ngModel  name="fkUserID" class="form-control input-underline input-lg" id="fkUserID" required>
+                  
+                                        </div>      
+                                      </div>             
+                                      <div class="row">                                <div class="form-group col-md-8">
+                                          <label for="isRead">IsRead</label>
+                                          <select class="form-control" #isRead ngModel = "isRead" name="isRead" id="isRead" required>
+                                                <option value=true>Yes</option>                   
+                                                <option value=false>NO</option>                   
+                                            </select>
+                                      </div>
+                                       </div>
+             
+                               <button type="submit" class="btn btn-outline-primary" >Create</button> &nbsp;
+                               <a class="btn rounded-btn btn-outline-info" [routerLink]="['/Contact']">Back</a>
+                           </form>
+                         </div>
+                   </div>
+              </div>
+           </div> 
+     </div>
+   </main>
+   
+   <app-footer></app-footer>

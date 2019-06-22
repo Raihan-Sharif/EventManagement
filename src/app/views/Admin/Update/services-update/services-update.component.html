@@ -1,0 +1,117 @@
+
+
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+    
+  <div class="mt-5">
+    <!-- Example DataTables Card-->
+<div class="card mb-3">
+    <div class="card-header">
+
+        <i class="fa fa-users"></i> Update Services
+
+    
+    </div>
+    <div class="card-body">
+        <form #servicesUpdateForm=ngForm (ngSubmit)="OnSubmit(packageName, price, packageDetails, fkCategoryTypeID, serviceLocation, serviceShift, serviceDuration, serviceQuentity, serviceFacility, serviceTypes, ImageID)">
+            <div class="row">
+                    <input type="hidden" id="ImageID" name="ImageID" #ImageID ngModel="ImageID" value="{{servicesData.imageID}}">
+                <div class="form-group col-md-4">
+                    <label for="fkCategoryID">Category</label>
+                    <select class="form-control" #fkCategoryID ngModel="fkCategoryID" (change)="onChangeCategory(fkCategoryID)"
+                        name="fkCategoryID" id="fkCategoryID">
+                        <option disabled selected>Please select Category</option>
+                        <option *ngFor="let item of catlist" value={{item.categoryID}}>{{item.categoryName}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fkSubCategoryID">SubCategory</label>
+                    <select class="form-control" #fkSubCategoryID ngModel="fkSubCategoryID" (ngModelChange)="onChangesubCategory($event)"
+                        name="fkSubCategoryID" id="fkSubCategoryID">
+                        <option disabled selected>Please select SubCategory</option>
+                        <option *ngFor="let i of subcatlist" [value]="i.subCategoryID">{{i.subCategoryName}}</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fkCategoryTypeID">*CategoryType</label>
+                    <select class="form-control" #fkCategoryTypeID ngModel="fkCategoryTypeID" name="fkCategoryTypeID"
+                        id="fkCategoryTypeID" required>
+                        <option disabled selected>Please select CategoryType</option>
+                        <option *ngFor="let item of cattypelist" value={{item.categoryTypeID}}>{{item.categoryTypeName}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="packageName">*PackageName : </label>
+                    <input type="text" #packageName ngModel name="packageName" class="form-control input-underline input-lg"
+                        id="packageName" value="{{servicesData.packageName}}" required>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="price">*Price : </label>
+                    <input type="text" #price ngModel name="price" class="form-control input-underline input-lg" id="price"
+                        value="{{servicesData.price}}" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="packageDetails">*PackageDetails : </label>
+                    <textarea #packageDetails ngModel name="packageDetails" class="form-control input-underline input-lg"
+                        id="packageDetails" value="{{servicesData.packageDetails}}" required></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="serviceTypes">Types : </label>
+                    <input type="text" #serviceTypes ngModel name="serviceTypes" class="form-control input-underline input-lg"
+                        id="serviceTypes" value="{{servicesData.serviceTypes}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="serviceLocation">Location : </label>
+                    <input type="text" #serviceLocation ngModel name="serviceLocation" class="form-control input-underline input-lg"
+                        id="serviceLocation" value="{{servicesData.serviceLocation}}">
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="serviceFacility">Facility : </label>
+                    <input type="text" #serviceFacility ngModel name="serviceFacility" class="form-control input-underline input-lg"
+                        id="serviceFacility" value="{{servicesData.serviceFacility}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="serviceQuentity">Quantity : </label>
+                    <input type="text" #serviceQuentity ngModel name="serviceQuentity" class="form-control input-underline input-lg"
+                        id="serviceQuentity" value="{{servicesData.serviceQuentity}}">
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="serviceShift">Shift : </label>
+                    <input type="text" #serviceShift ngModel name="serviceShift" class="form-control input-underline input-lg"
+                        id="serviceShift" value="{{servicesData.serviceShift}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="serviceDuration">Duration : </label>
+                    <input type="text" #serviceDuration ngModel name="serviceDuration" class="form-control input-underline input-lg"
+                        id="serviceDuration" value="{{servicesData.serviceDuration}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="File">*Images Upload : </label>
+                    <input type="file" #File ngModel name="File" single (change)="getImagesinfo($event)" class="form-control input-underline input-lg"
+                        id="File" required>
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-outline-primary">Update</button> &nbsp;
+            <a class="btn rounded-btn btn-outline-info" [routerLink]="['/Services']">Back</a>
+        </form>
+
+    </div>
+
+</div>
+<!-- card body -->
+  </div>
+</main>
+
+<app-footer></app-footer>

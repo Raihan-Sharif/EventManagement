@@ -1,0 +1,182 @@
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}" class="mx-lg-5">
+
+    <div class="mt-5">
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+
+                <i class="fa fa-users"></i> Create Services
+
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="fkCategoryID">Category</label>
+                        <select class="form-control" #fkCategoryID ngModel="fkCategoryID" (change)="onChangeCategory(fkCategoryID)"
+                            name="fkCategoryID" id="fkCategoryID">
+                            <option disabled selected>Please select Category</option>
+                            <option *ngFor="let item of catlist" value={{item.categoryID}}>{{item.categoryName}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="fkSubCategoryID">SubCategory</label>
+                        <select class="form-control" #fkSubCategoryID ngModel="fkSubCategoryID" (ngModelChange)="onChangesubCategory($event)"
+                            name="fkSubCategoryID" id="fkSubCategoryID">
+                            <option disabled selected>Please select SubCategory</option>
+                            <option *ngFor="let i of subcatlist" [value]="i.subCategoryID">{{i.subCategoryName}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="fkCategoryTypeID">*CategoryType</label>
+                        <select class="form-control" #fkCategoryTypeID ngModel="fkCategoryTypeID" name="fkCategoryTypeID"
+                            id="fkCategoryTypeID" required>
+                            <option disabled selected>Please select CategoryType</option>
+                            <option *ngFor="let item of cattypelist" value={{item.categoryTypeID}}>{{item.categoryTypeName}}</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div *ngIf="catname.categoryName != 'Places'; then serviceReg else PlaceReg"></div>
+                <ng-template #serviceReg>
+                    <form #servicesForm=ngForm (ngSubmit)="OnSubmit(PackageName, Price, PackageDetails, fkCategoryTypeID, Location, Shift, Duration, Quentity, Facility, Types)">
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="PackageName">*PackageName : </label>
+                                <input type="text" #PackageName ngModel name="PackageName" class="form-control input-underline input-lg"
+                                    id="PackageName" required>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Price">*Price : </label>
+                                <input type="text" #Price ngModel name="Price" class="form-control input-underline input-lg"
+                                    id="Price" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="PackageDetails">*PackageDetails : </label>
+                                <textarea #PackageDetails ngModel name="PackageDetails" class="form-control input-underline input-lg"
+                                    id="PackageDetails" required></textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Types">Types : </label>
+                                <input type="text" #Types ngModel name="Types" class="form-control input-underline input-lg"
+                                    id="Types">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="Location">Location : </label>
+                                <input type="text" #Location ngModel name="Location" class="form-control input-underline input-lg"
+                                    id="Location">
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Facility">Facility : </label>
+                                <input type="text" #Facility ngModel name="Facility" class="form-control input-underline input-lg"
+                                    id="Facility">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="Quentity">Quentity : </label>
+                                <input type="text" #Quentity ngModel name="Quentity" class="form-control input-underline input-lg"
+                                    id="Quentity">
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Shift">Shift : </label>
+                                <input type="text" #Shift ngModel name="Shift" class="form-control input-underline input-lg"
+                                    id="Shift">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Duration">Duration : </label>
+                                <input type="text" #Duration ngModel name="Duration" class="form-control input-underline input-lg"
+                                    id="Duration">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="File">*Images Upload : </label>
+                                <input type="file" #File ngModel name="File" multiple (change)="getImagesinfo($event)"
+                                    class="form-control input-underline input-lg" id="File" required>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-outline-primary">Create</button> &nbsp;
+                        <a class="btn rounded-btn btn-outline-info" [routerLink]="['']">Back</a>
+                    </form>
+                </ng-template>
+
+                <!--     Places Registration From                                  -->
+                <ng-template #PlaceReg>
+                    <form #placesForm=ngForm (ngSubmit)="OnPlaceSubmit(PlacesName, PlacesDetails, fkCategoryTypeID, location, Capacity, Facility, Types)">
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="PlacesName">* PlacesName : </label>
+                                <input type="text" #PlacesName ngModel name="PlacesName" class="form-control input-underline input-lg"
+                                    id="PlacesName" required>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Parking">*Parking : </label>
+                                <!-- <input type="text" #Parking ngModel name="Parking" class="form-control input-underline input-lg" id="Parking" required>
+                                <label>*Parking  :</label> -->
+                                <div class="form-control input-underline input-lg">
+                                    <label> YES
+                                        <input #Parking ngModel type="checkbox" name="Parking" [value]="true" id="Parking1"
+                                            (change)="newFunction($event)" checked>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="PlacesDetails">*PlacesDetails : </label>
+                                <textarea #PlacesDetails ngModel name="PlacesDetails" class="form-control input-underline input-lg"
+                                    id="PlacesDetails" required></textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Types">Types : </label>
+                                <input type="text" #Types ngModel name="Types" class="form-control input-underline input-lg"
+                                    id="Types">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="location">Location : </label>
+                                <input type="text" #location ngModel name="location" class="form-control input-underline input-lg"
+                                    id="location">
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Facility">Facility : </label>
+                                <input type="text" #Facility ngModel name="Facility" class="form-control input-underline input-lg"
+                                    id="Facility">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="Capacity">Capacity : </label>
+                                <input type="text" #Capacity ngModel name="Capacity" class="form-control input-underline input-lg"
+                                    id="Capacity">
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit" class="btn btn-outline-primary">Save</button> &nbsp;
+                        <a class="btn rounded-btn btn-outline-info" [routerLink]="['/Places/Create']">Next >></a>
+                        &nbsp;
+                        <a class="btn rounded-btn btn-outline-info" [routerLink]="['']">Back</a>
+                    </form>
+                </ng-template>
+
+            </div>
+
+        </div>
+        <!-- card body -->
+    </div>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,245 @@
+<div class="page">
+    <header id="header">
+
+      <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav"
+        [containerInside]="true">
+  
+  
+        <mdb-navbar-brand>
+          <a class="logo navbar-brand" href="#">
+            <img src="../assets/images/logo.png">
+          </a>
+        </mdb-navbar-brand>
+        <links>
+  
+          <ul class="navbar-nav">
+            <li class="nav-item active waves-light" mdbWavesEffect>
+              <a class="nav-link">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link" href="#aboutus">About Us</a>
+            </li>
+            <li class="nav-item dropdown" dropdown>
+              <a dropdownToggle mdbWavesEffect type="button" href="#" class="nav-link dropdown-toggle waves-light"
+                mdbWavesEffect>
+                Services<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+              <a class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+              <a href="#contact" class="nav-link">Contact Us</a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+              <a href="#" class="nav-link"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </links>
+      </mdb-navbar>
+    </header>
+    <section class="page-header widthBgimg" style="background-image:url(../assets/images/banner-img/careerBanner.jpg); ">
+      <div class="container">
+        <h1>{{placeDetails.placesName}}</h1>
+      </div>
+    </section>
+    <section class="divider"></section>
+    <section>
+      <div class="container">
+        <div class="service-right">
+          <div class="event-info">
+            <h2>{{placeDetails.placesName}}</h2>
+            <p>{{placeDetails.placesDetails}}</p>
+            <!-- <div class="service-details">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="weddingimg">
+                    <img src="../assets/images/property-img/locationImg5.jpg" alt="">
+                  </div>
+                </div>
+                <div class="col-sm-8">
+                  <h3>Ideal to be availed for:</h3>
+                  <ul class="available">
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Real Wedding Flowers</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Christmas Arrangements</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Local Florists</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Engagement Ceremony</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Social Events</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Flowers Advice & Etiquette</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Preparing bouquets</li>
+                  </ul>
+                  <ul class="available">
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Real Wedding Flowers</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Christmas Arrangements</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Local Florists</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Engagement Ceremony</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Social Events</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Flowers Advice & Etiquette</li>
+                    <li><i class="fa fa-check" aria-hidden="true"></i>Preparing bouquets</li>
+                  </ul>
+                </div>
+              </div>
+            </div>  -->
+            <div class="col-md-10">
+      
+      
+                <!--Card-->
+                <div class="card card-cascade wider">
+                  <!--Card content-->
+                  <!--Card image-->
+                  <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+                    <img src="{{placeDetails.imagePath}}" class="img-fluid">
+                    <!-- <img src="../../../../assets/img/Raihan-profile-picture.jpg" class="img-fluid"> -->
+                    <a>
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+                  <!--/Card image-->
+                  <div class="card-body text-right">
+          
+                    <table class="table table-vertical table-striped text-left">
+                      <tbody>
+                        <tr>
+                          <th>Booking Price :</th>
+                          <td class="text-left">{{placeDetails.price}}</td>
+                        </tr>
+                        <tr>
+                          <th>Location :</th>
+                          <td class="text-left">{{placeDetails.placeLocation}}</td>
+                        </tr>
+                        <tr>
+                          <th>Facility :</th>
+                          <td class="text-left">{{placeDetails.placeFacility}}</td>
+                        </tr>
+                        <tr>
+                          <th>Capacity :</th>
+                          <td class="text-left">{{placeDetails.placeCapacity}}</td>
+                        </tr>
+                        <tr>
+                          <th>Place Types:</th>
+                          <td class="text-left">{{placeDetails.placeTypes}}</td>
+                        </tr>
+                        <tr>
+                            <th>Offer:</th>
+                            <td class="text-left">{{placeDetails.placeOffer}}</td>
+                          </tr>
+                          <tr>
+                              <th>Parking:</th>
+                              <td class="text-left">{{placeDetails.placeParking}}</td>
+                            </tr>
+                        <tr>
+                          <th>Place Shift :</th>
+                          <td class="text-left">{{placeDetails.shiftName}}</td>
+                        </tr>
+                        <tr>
+                          <th>Service Duration :</th>
+                          <td class="text-left">{{placeDetails.timeinfo}}</td>
+                        </tr>
+          
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--/.Card content-->
+                </div>
+                <!--/.Card-->
+              </div><br>
+            <div class="Quantity">
+  
+              <div class="container">
+                <div class="row">
+                  <div class="col-5">
+                    <!-- <div class="imgtablitle">
+                      <img src="../assets/images/blog-img/blog-img1.jpg">
+                      <img src="../assets/images/blog-img/blog-img2.jpg">
+                      <img src="../assets/images/blog-img/blog-img3.jpg">
+                      <img src="../assets/images/blog-img/blog-img4.jpg">
+                    </div>
+                     
+                    <div class="imgtabbig">
+                      <img src="{{serviceDetails.imagePath}}">
+                    </div> -->
+  
+                    <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+                      <img src="{{placeDetails.imagePath}}" class="img-fluid">
+                      <!-- <img src="../../../../assets/img/Raihan-profile-picture.jpg" class="img-fluid"> -->
+                      <a>
+                        <div class="mask"></div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-7 orderpart">
+                    <h3>We give you the best offer to enjoy</h3>
+                    <label for="price">Price:</label> <input class="fa-align-right" type="text" id="price" value="{{placeDetails.price}}"><br><br>
+                    <label for="Qty">Quantity:</label><input class="fa-align-right" type="number" id="Qty" value="{{placeDetails.serviceQuentity}}"><br><br>
+                    <label for="tprice">Total Price:</label><input class="fa-align-right" type="number" id="tprice" value="{{totalPrice}}"><br><br>
+                    <a type="button" class="btn btn-sm btn-info" [routerLink]="['/Home/Places/Order/',item]" title="View-Details">Book Now</a> &nbsp; <a type="button" class="btn btn-sm btn-info" [routerLink]="['/Home/Places/Cart/',item]" title="View-Details">Add To Cart</a>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+          <div class="event-galler">
+            <h2>Photo Gallery</h2>
+            <div class="row">
+              <div class="col-md-12">
+  
+                <div id="mdb-lightbox-ui"></div>
+  
+                <div class="mdb-lightbox">
+  
+                  <figure class="col-md-4">
+                    <a href="../assets/images/service-img/service-img1.png" data-size="1600x1067">
+                      <img src="../assets/images/service-img/service-img1.png" class="img-fluid">
+                    </a>
+                  </figure>
+  
+                  <figure class="col-md-4">
+                    <a href="../assets/images/service-img/service-img2.png" data-size="1600x1067">
+                      <img src="../assets/images/service-img/service-img2.png" class="img-fluid" />
+                    </a>
+                  </figure>
+  
+                  <figure class="col-md-4">
+                    <a href="../assets/images/service-img/service-img3.png" data-size="1600x1067">
+                      <img src="../assets/images/service-img/service-img3.png" class="img-fluid" />
+                    </a>
+                  </figure>
+  
+  
+  
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="divider"></section>
+    <footer id="footer" class="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 copyright">
+            Copyright &copy; - EventPlanning | All Rights Reserved
+          </div>
+          <div class="col-md-4 footer_logo"><a href="#"><img src="../assets/images/footer-logo.png" alt=""></a></div>
+          <div class="col-md-4 social_icon">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+  
+      </div>
+    </footer>
+  </div>
+  

@@ -1,0 +1,71 @@
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}" class="mx-lg-5">
+
+    <div class="mt-5">
+        <div class="content-wrapper">
+            <div class="container">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/dashboards">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active">Contact-List</li>
+                </ol>
+                <div class="card-body">
+                    <a type="button" class="btn btn-success" [routerLink]="['/Contact/Create']" title="Create"><i class="fa fa-file"
+                            aria-hidden="true"></i></a><br />
+                    <div class="table-responsive">
+                        <h3>Contact List</h3>
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>serial</th>
+                                    <th type=hidden>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
+                                    <th>Others</th>
+                                    <th>user Id</th>
+                                    <th>IsRead</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <!--  -->
+                                <tr *ngFor="let item of contactData; let i = index">
+
+                                    <td>{{i+1}}</td>
+                                    <td type=hidden>{{item.contactID}}</td>
+                                    <td>{{item.contactName}}</td>
+                                    <td>{{item.contactEmail}}</td>
+                                    <td>{{item.contactPhone}}</td>
+                                    <td>{{item.contactSubject}}</td>
+                                    <td>{{item.contactMessage}}</td>
+                                    <td>{{item.contactOthers}}</td>
+                                    <td>{{item.fkUserID}}</td>
+                                    <td>{{item.isRead}}</td>
+                                    <td>
+                                        <a type="button" class="btn btn-success" [routerLink]="['/Contact/Details/',item.contactID]"
+                                            title="View-Details"><i class="fa fa-table" aria-hidden="true"></i></a>&nbsp;
+
+                                        <a type="button" class="btn btn-info" [routerLink]="['/Contact/Edit/',item.contactID]"
+                                            title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;
+
+                                        <a type="button" class="btn btn-danger" (click)="onDelete(item)"><i class="fa fa-trash-o"
+                                                aria-hidden="true" title="Delete"></i></a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<app-footer></app-footer>

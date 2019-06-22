@@ -1,0 +1,109 @@
+<!--Main Navigation-->
+<header>
+
+    <!-- Sidebar -->
+    <div class="sidebar-fixed position-fixed">
+
+        <!--Card-->
+        <div class="card card-cascade wider mt-2 mb-3">
+
+            <!--Card image-->
+            <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+                <img src="../../../../assets/images/logo.png" class="img-fluid">
+                <a>
+                    <div class="mask"></div>
+                </a>
+            </div>
+            <!--/Card image-->
+        </div>
+
+        <div class="list-group list-group-flush ">
+            <a routerLink="/Home" routerLinkActive="active" class="list-group-item list-group-item-action list-group-item-primary">
+                <i class="fa fa-home mr-3"></i>Home
+            </a>
+            <a routerLink="/dashboards" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-danger">
+                <i class="fa fa-pie-chart mr-3"></i>Dashboard
+            </a>
+
+            
+            <a routerLink="/User" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-warning">
+                <i class="fa fa-user mr-3"></i>User List</a>
+                
+            <a routerLink="/Role" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-warning">
+                <i class="fa fa-user mr-3"></i>Role</a>
+
+            <a routerLink="/profiles/profile1" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-warning">
+                <i class="fa fa-user mr-3"></i>Profile</a>
+            <a routerLink="/Category" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-info">
+                <i class="fa fa-table mr-3"></i>Category</a>
+            <a routerLink="/SubCategory" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-info">
+                <i class="fa fa-table mr-3"></i>Sub-Category</a>
+
+            <a routerLink="/CategoryType" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-info">
+                <i class="fa fa-table mr-3"></i>Category-Type</a>
+
+            <a routerLink="/Services" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-info">
+                <i class="fa fa-table mr-3"></i>Services</a>
+
+            <a routerLink="/Shift" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-info">
+                <i class="fa fa-table mr-3"></i>Shift</a>
+
+            <a routerLink="/Places" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-info">
+                <i class="fa fa-table mr-3"></i>Places</a>
+
+            <a routerLink="/Contact" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-info">
+                <i class="fa fa-table mr-3"></i>Contact</a>
+
+            <a routerLink="/tables/table1" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect list-group-item-info">
+                <i class="fa fa-table mr-3"></i>Tables</a>
+
+        </div>
+        <div class="list-group list-group-flush">
+            <div class="dropdown mt-0 mr-1" mdbDropdown>
+
+                <button mdbDropdownToggle mdbBtn color="primary" class="list-group-item list-group-item-action" type="button"
+                    mdbWavesEffect>
+                    Create
+                </button>
+
+                <div class="dropdown-menu ">
+                    <a routerLink="/Category/Create" routerLinkActive="active" class="btn-link ml-3">Category</a><br>
+                    <a routerLink="/SubCategory/Create" routerLinkActive="active" class="btn-link ml-3">Sub Category</a><br>
+                    <a routerLink="/CategoryType/Create" routerLinkActive="active" class="btn-link ml-3">Category Type</a><br>
+                    <a routerLink="/Places/Create" routerLinkActive="active" class="btn-link ml-3">Places</a><br>
+                    <a routerLink="/Services/Create" routerLinkActive="active" class="btn-link ml-3">Services</a><br>
+                    <a routerLink="/Shifts/Create" routerLinkActive="active" class="btn-link ml-3">Shifts</a><br>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Sidebar -->
+    <br>
+
+
+
+
+    <!-- breadcrumb -->
+    <div class="dark-font bc-icons-2" style="margin-left:300px; margin-right:40px;">
+
+        <mdb-breadcrumb customClass="white-text purple lighten-1 ">
+            <mdb-breadcrumb-item>
+                <mdb-icon icon="caret-left" class="mr-1"></mdb-icon> Home
+            </mdb-breadcrumb-item>
+            <mdb-breadcrumb-item>
+                <mdb-icon icon="caret-left" class="mr-1"></mdb-icon> Library
+            </mdb-breadcrumb-item>
+            <mdb-breadcrumb-item class="active">
+                <mdb-icon icon="caret-left" class="mr-1"></mdb-icon> Data
+            </mdb-breadcrumb-item>
+        </mdb-breadcrumb>
+
+
+    </div>
+
+</header>
+<!--Main Navigation-->

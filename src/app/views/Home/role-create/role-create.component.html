@@ -1,0 +1,28 @@
+
+
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+    
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Default form Category -->
+        <form #roleForm=ngForm novalidate>
+          <div class="form-content">
+              <div class="form-group">
+                  <input type="text" #Name id="Name" name="Name" class="form-control input-underline input-lg" placeholder="Role Name" />                  
+              </div>
+            </div>
+          <br/>
+          <input type="submit" class="btn rounded-btn btn-outline-success" [disabled]="roleForm.invalid" (click)="onCreate(Name)" value="Create">&nbsp;
+          <a class="btn rounded-btn btn-outline-info" [routerLink]="['/Role']">Back</a>
+    
+      </form>
+      <!-- Default form contact -->
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,33 @@
+
+
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+    
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Default form Category -->
+        <form role="form" [formGroup]="categoryForm" novalidate>
+          <div class="form-content">
+              <div class="form-group">
+                  <input type="text" formControlName="categoryName" name="categoryName" class="form-control input-underline input-lg" placeholder="Category Name" />
+                  <div *ngIf="categoryForm.controls['categoryName'].invalid &&  categoryForm.controls['categoryName'].touched" class="alert alert-danger">
+                      <a *ngIf="categoryForm.controls['categoryName'].errors.required">
+                        Name is required.
+                        </a>
+                  </div>
+              </div>
+            </div>
+          <br/>
+          <input type="submit" class="btn rounded-btn btn-outline-success" [disabled]="categoryForm.invalid" (click)="onCreate()" value="Create">&nbsp;
+          <a class="btn rounded-btn btn-outline-info" [routerLink]="['/Category']">Back</a>
+    
+      </form>
+      <!-- Default form contact -->
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,40 @@
+.bg{
+    background-image: url(../../../assets/images/banner-img/registration-banneBg.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.registration{
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 50px;
+    h1{
+        margin-bottom: 20px;
+        color: deeppink;
+    }
+    .form-filde{
+        .input-slide{
+            input{
+                margin: 5px;
+                padding: 5px;
+            }
+        }
+        .select-row{
+            select{
+                margin: 5px;
+                padding: 5px;
+            }
+        }
+        .check-slide{
+            margin: 5px;
+            padding: 5px;
+        }
+        .submit-slide{
+            input{
+                background-color: deeppink;
+            }
+        }
+    }
+}

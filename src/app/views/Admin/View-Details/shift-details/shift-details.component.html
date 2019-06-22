@@ -1,0 +1,74 @@
+
+
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+    
+  <div class="mt-5">
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/dashboards">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Shift-Details</li>
+            </ol>
+    
+            <div class="col-md-8">
+    
+    
+                <!--Card-->
+                <div class="card card-cascade wider">
+                    <div class="card-header">
+    
+                        <i class="fa fa-users"></i>Shift Details
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body text-right">
+    
+                        <table class="table table-vertical table-striped text-left">
+                            <tbody>
+                                <tr>
+                                    <th>Shift ID :</th>
+                                    <td class="text-left">{{ShiftDetails.shiftID}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Shift Name :</th>
+                                    <td class="text-left">{{ShiftDetails.shiftName}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Shift Time-Information :</th>
+                                    <td class="text-left">{{ShiftDetails.timeinfo}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+    
+                                <td class="text-left">
+                                    <a type="button" class="btn btn-info" [routerLink]="['/Shift/Edit/',ShiftDetails.shiftID]"
+                                        title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;
+    
+                                    <a type="button" class="btn btn-danger" (click)="onDelete(ShiftDetails)"><i class="fa fa-trash-o"
+                                            aria-hidden="true" title="Delete"></i></a>&nbsp;&nbsp;
+    
+                                    <a type="button" class="btn btn-success" [routerLink]="['/Shift']" title="Back to List"><i
+                                            class="fa fa-list" aria-hidden="true"></i></a>&nbsp;&nbsp;
+                                </td>
+    
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!--/.Card content-->
+                </div>
+                <!--/.Card-->
+            </div>
+            <br>
+            <br>
+            <br>
+    
+        </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

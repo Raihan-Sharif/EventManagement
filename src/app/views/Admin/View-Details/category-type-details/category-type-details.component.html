@@ -1,0 +1,76 @@
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}" class="mx-lg-5">
+
+    <div class="mt-5">
+        <div class="content-wrapper">
+            <div class="container">
+                <!-- Breadcrumbs-->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/dashboards">Dashboard</a>
+                    </li>
+                    <li class="breadcrumb-item active">Category-Type-Details</li>
+                </ol>
+
+                <div class="col-md-8">
+
+
+                    <!--Card-->
+                    <div class="card card-cascade wider">
+                        <div class="card-header">
+
+                            <i class="fa fa-users"></i> Details Category-Type
+                        </div>
+                        <!--Card content-->
+                        <div class="card-body text-right">
+
+                            <table class="table table-vertical table-striped text-left">
+                                <tbody>
+                                    <tr>
+                                        <th>Category-Type ID :</th>
+                                        <td class="text-left">{{categoryTypeDetails.categoryTypeID}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Category-Type Name :</th>
+                                        <td class="text-left">{{categoryTypeDetails.categoryTypeName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Category-Type Level :</th>
+                                        <td class="text-left">{{categoryTypeDetails.categoryTypelevel}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Sub-Category :</th>
+                                        <td class="text-left">{{categoryTypeDetails.fkSubCategoryID}}</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+
+                                    <td class="text-left">
+                                        <a type="button" class="btn btn-info" [routerLink]="['/CategoryType/Edit/',categoryTypeDetails.categoryTypeID]"
+                                            title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;
+
+                                        <a type="button" class="btn btn-danger" (click)="onDelete(categoryTypeDetails)"><i
+                                                class="fa fa-trash-o" aria-hidden="true" title="Delete"></i></a>&nbsp;&nbsp;
+
+                                        <a type="button" class="btn btn-success" [routerLink]="['/CategoryType']" title="Back to List"><i
+                                                class="fa fa-list" aria-hidden="true"></i></a>&nbsp;&nbsp;
+                                    </td>
+
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <br>
+                <br>
+                <br>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<app-footer></app-footer>

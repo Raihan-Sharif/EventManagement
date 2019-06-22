@@ -1,0 +1,58 @@
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+    
+  <div class="mt-5">
+    <!-- content goes to here -->
+    <div class="card mb-3">
+      <div class="card-header">  
+          <i class="fa fa-users"></i> Create Places  
+      </div>
+      <div class="card-body">          
+      <form #placesForm=ngForm (ngSubmit)="OnSubmit(ImageID, PlaceShiftID, PlaceID, shiftID, Offer, Price, PlaceFacility)">
+              
+          <div class="row">
+              <input type="hidden" id="PlaceID" name="PlaceID" #PlaceID ngModel="PlaceID" value="{{servicesData.placeID}}">
+              <input type="hidden" id="PlaceShiftID" name="PlaceShiftID" #PlaceShiftID ngModel="PlaceShiftID" value="{{servicesData.placeShiftID}}">
+              <input type="hidden" id="ImageID" name="ImageID" #ImageID ngModel="ImageID" value="{{servicesData.imageID}}">
+            <div class="form-group col-md-6">
+              <label for="shiftID">ShiftName</label>
+              <select class="form-control" #shiftID ngModel = "shiftID" name="shiftID" id="shiftID">
+                          <option disabled selected>Please select ShiftName</option>                               
+                    <option *ngFor="let i of shiftlist" [value]="i.shiftID">{{i.shiftName}}</option>                                   
+                </select> 
+          </div>
+        
+            </div>
+      <div class="row">
+          <div class="form-group col-md-6">
+              <label for="Offer">*Offer  :  </label>
+              <input type="text" #Offer ngModel name="Offer" value="{{servicesData.placeOffer}}" class="form-control input-underline input-lg" id="Offer" required>
+
+          </div>   
+          <div class="form-group col-md-6">
+              <label for="Price">*Price  :  </label>
+                  <input type="text" #Price ngModel name="Price" value="{{servicesData.price}}" class="form-control input-underline input-lg" id="Price" required>
+              </div>                    
+    
+          <div class="form-group col-md-6">
+              <label for="PlaceFacility">*PlaceFacility  :  </label>
+              <textarea  #PlaceFacility ngModel name="PlaceFacility" value="{{servicesData.placeFacility}}" class="form-control input-underline input-lg" id="PlaceFacility" required></textarea>                
+            </div> 
+            <div class="form-group col-md-6">
+            <label for="File">*Images Upload  :  </label>
+            <input type="file" #File ngModel name="File" single (change)="getImagesinfo($event)" class="form-control input-underline input-lg" id="File" required>
+            </div>                
+         </div>
+
+
+      <button type="submit" class="btn btn-outline-primary" >Update</button> &nbsp;
+      <a class="btn rounded-btn btn-outline-info" [routerLink]="['/Places']">Back</a>
+  </form>
+
+</div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

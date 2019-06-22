@@ -1,0 +1,58 @@
+
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+    
+  <div class="mt-5">
+    <div class="content-wrapper">
+        <div class="container">
+           <ol class="breadcrumb">
+               <li class="breadcrumb-item">
+               <a href="/dashboards">Dashboard</a>
+               </li>
+               <li class="breadcrumb-item active">CategoryType</li>
+               </ol>
+             <!-- Example DataTables Card-->
+               <div class="card mb-3">
+                   <div class="card-header">
+         
+                       <i class="fa fa-users"></i> Create CategoryType
+         
+         
+                   </div>
+                   <div class="card-body">
+                       <form #CategoryTypeForm=ngForm (ngSubmit)="OnSubmit(categoryTypeName, categoryTypelevel,fkSubCategoryID)">
+                           <div class="row">
+                               <div class="form-group col-md-4">
+                                   <label for="categoryTypeName">Category-Type Name</label>
+                                   <input type="text" #categoryTypeName ngModel  name="categoryTypeName" class="form-control input-underline input-lg" id="categoryTypeName" required>
+         
+                               </div>
+                               <div class="form-group col-md-4">
+                                       <label for="categoryTypelevel">Category-Type Level</label>
+                                       <input type="text" #categoryTypelevel ngModel  name="categoryTypelevel" class="form-control input-underline input-lg" id="categoryTypelevel" required>
+             
+                                   </div>
+                               <div class="form-group col-md-4">
+                                   <label for="fkSubCategoryID">Sub-Category</label>
+                                   <select class="form-control" #fkSubCategoryID ngModel = "fkSubCategoryID" name="fkSubCategoryID" id="fkSubCategoryID" required>
+                                               <option disabled selected>Please select Sub-Category</option>                               
+                                         <option *ngFor="let item of subCategoryList" value={{item.subCategoryID}}>{{item.subCategoryName}}</option>                                   
+                                     </select>
+                               </div>
+         
+                       
+                           </div>
+         
+                           <button type="submit" class="btn btn-outline-primary" [disabled]="categoryTypeName.value=='' ||categoryTypelevel.value==''" >Create</button> &nbsp;
+                           <a class="btn rounded-btn btn-outline-info" [routerLink]="['/CategoryType']">Back</a>
+                       </form>
+                     </div>
+               </div>
+          </div>
+       </div>
+       
+  </div>
+</main>
+
+<app-footer></app-footer>

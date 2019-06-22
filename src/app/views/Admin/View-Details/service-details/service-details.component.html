@@ -1,0 +1,118 @@
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}" class="mx-lg-5">
+
+  <div class="mt-5">
+    <div class="content-wrapper">
+      <div class="container">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/dashboards">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Service-Details</li>
+        </ol>
+
+        <div class="col-md-8">
+
+
+          <!--Card-->
+          <div class="card card-cascade wider">
+            <div class="card-header">
+
+              <i class="fa fa-users"></i>Service Details
+            </div>
+            <!--Card content-->
+            <!--Card image-->
+            <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+              <img src="{{serviceDetails.imagePath}}" class="img-fluid">
+              <!-- <img src="../../../../assets/img/Raihan-profile-picture.jpg" class="img-fluid"> -->
+              <a>
+                <div class="mask"></div>
+              </a>
+            </div>
+            <!--/Card image-->
+            <div class="card-body text-right">
+
+              <table class="table table-vertical table-striped text-left">
+                <tbody>
+                  <tr>
+                    <th> ID :</th>
+                    <td class="text-left">{{serviceDetails.serviceID}}</td>
+                  </tr>
+                  <tr>
+                    <th>Package Name :</th>
+                    <td class="text-left">{{serviceDetails.packageName}}</td>
+                  </tr>
+                  <tr>
+                    <th>Package Details:</th>
+                    <td class="text-left">{{serviceDetails.packageDetails}}</td>
+                  </tr>
+                  <tr>
+                    <th>Price :</th>
+                    <td class="text-left">{{serviceDetails.price}}</td>
+                  </tr>
+                  <tr>
+                    <th>Location :</th>
+                    <td class="text-left">{{serviceDetails.serviceLocation}}</td>
+                  </tr>
+                  <tr>
+                    <th>Facility :</th>
+                    <td class="text-left">{{serviceDetails.serviceFacility}}</td>
+                  </tr>
+                  <tr>
+                    <th>Quantity :</th>
+                    <td class="text-left">{{serviceDetails.serviceQuentity}}</td>
+                  </tr>
+                  <tr>
+                    <th>Service Types:</th>
+                    <td class="text-left">{{serviceDetails.serviceTypes}}</td>
+                  </tr>
+                  <tr>
+                    <th>Category Type ID :</th>
+                    <td class="text-left">{{serviceDetails.fkCategoryTypeID}}</td>
+                  </tr>
+                  <tr>
+                    <th>Vendor ID:</th>
+                    <td class="text-left">{{serviceDetails.fkVendorID}}</td>
+                  </tr>
+                  <tr>
+                    <th>Service Shift :</th>
+                    <td class="text-left">{{serviceDetails.serviceShift}}</td>
+                  </tr>
+                  <tr>
+                    <th>Service Duration :</th>
+                    <td class="text-left">{{serviceDetails.serviceDuration}}</td>
+                  </tr>
+
+                </tbody>
+                <tfoot>
+
+                  <td class="text-left">
+                    <a type="button" class="btn btn-info" [routerLink]="['/Services/Edit/',serviceDetails.serviceID]"
+                      title="Edit"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;
+
+                    <a type="button" class="btn btn-danger" (click)="onDelete(serviceDetails)"><i class="fa fa-trash-o"
+                        aria-hidden="true" title="Delete"></i></a>&nbsp;&nbsp;
+
+                    <a type="button" class="btn btn-success" [routerLink]="['/Services']" title="Back to List"><i class="fa fa-list"
+                        aria-hidden="true"></i></a>&nbsp;&nbsp;
+                  </td>
+
+                </tfoot>
+              </table>
+            </div>
+            <!--/.Card content-->
+          </div>
+          <!--/.Card-->
+        </div>
+        <br>
+        <br>
+        <br>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

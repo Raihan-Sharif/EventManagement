@@ -1,0 +1,109 @@
+<div class="page">
+  <header id="header">
+
+    <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav"
+      [containerInside]="true">
+      <mdb-navbar-brand>
+        <a class="logo navbar-brand" href="#">
+          <img src="../assets/images/logo.png">
+        </a>
+      </mdb-navbar-brand>
+      <links>
+        <ul class="navbar-nav">
+          <li class="nav-item active waves-light" mdbWavesEffect>
+            <a class="nav-link">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" href="#aboutus">About Us</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link" href="/Home/Places">Places</a>
+          </li>
+
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a class="nav-link">Gallery</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a href="#contact" class="nav-link">Contact Us</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+            <a href="/Login" class="nav-link">Login</a>
+          </li>
+        </ul>
+      </links>
+    </mdb-navbar>
+  </header>
+  <section class="page-header widthBgimg" style="background-image:url(../assets/images/banner-img/service-bannerImg.jpg); ">
+    <div class="container">
+      <h1>Our Services</h1>
+    </div>
+  </section>
+  <section class="divider"></section>
+  <section>
+    <div class="container" *ngFor="let item of serviceData">
+      <div class="row">
+        <div class="col-3 left">
+          <div class="CtImg">
+            <a [routerLink]="['/Home/Services/Details/',item.serviceID]">
+              <img src="{{item.imagePath}}" height="150" width="150">
+            </a>
+          </div>
+        </div>
+        <div class="col-3 left">
+          <h3>{{item.packageName}}</h3>
+          <div class="address">{{item.packageDetails}}</div>
+        </div>
+        <div class="col-2 left">
+          <div class="text-left">
+            <label><b>Service Type &nbsp; : &nbsp; </b></label>
+            <span class="text-dark">{{item.serviceTypes}}</span>
+          </div>
+          <div class="text-left">
+            <label><b>Location &nbsp; : &nbsp; </b></label>
+            <span class="text-dark">{{item.serviceLocation}}</span>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-2 left">
+          <div class="text-left">
+            <label><b>Price &nbsp; : &nbsp; </b></label>
+            <span class="text-dark">{{item.price}}</span>
+          </div>
+          <div class="text-dark">
+            <label><b>Service Quantity &nbsp; : &nbsp; </b></label>
+            <span class="text-dark">{{item.serviceQuentity}}</span>
+          </div>
+        </div>
+        <div class="col-2 mt-3">
+          <a type="button" class="btn btn-sm btn-info" [routerLink]="['/Home/Services/Details/',item.serviceID]" title="View-Details">View-Details</a>
+        </div>
+        <br>
+      </div>
+      <br>
+    </div>
+  </section>
+  <section class="divider"></section>
+  <footer id="footer" class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 copyright">
+          Copyright &copy; - EventPlanning | All Rights Reserved
+        </div>
+        <div class="col-md-4 footer_logo"><a href="#"><img src="../../../../assets/images/footer-logo.png" alt=""></a></div>
+        <div class="col-md-4 social_icon">
+          <ul>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-play" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</div>

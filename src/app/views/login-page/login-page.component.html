@@ -1,0 +1,25 @@
+<div class="bg">
+  <div class="container">
+    <div class="row">
+      <div class="registration">
+        <h1>Log In</h1>
+        <form role="form" [formGroup]="bngForm" novalidate>
+        <div class="form-filde">
+            <div class="input-slide">
+                <input type="text" formControlName="username" name="username" placeholder="User Name">
+            </div>
+            <div class="input-slide">
+                <input type="password" formControlName="password" name="password" placeholder="Password">
+            </div>
+            <div class="submit-slide">
+              <input type="submit" class="btn rounded-btn" [disabled]="bngForm.invalid" (click)="loginUser()" value="Login">
+            </div>&nbsp;
+            
+              <a href="/Registration" class="btn-link">Registration</a>
+      
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

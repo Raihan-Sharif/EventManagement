@@ -1,0 +1,91 @@
+
+
+<app-navigation></app-navigation>
+
+<main [ngClass]="{'py-0 px-0 my-0 mx-0': specialPage}"  class="mx-lg-5" >
+    
+  <div class="mt-5">
+    <!-- Example DataTables Card-->
+<div class="card mb-3">
+    <div class="card-header">
+
+        <i class="fa fa-users"></i> Update User
+
+    
+    </div>
+    <div class="card-body">
+        <form #servicesUpdateForm=ngForm (ngSubmit)="OnSubmit(Id, firstName, lastName, email, phoneNumber, password, confirmPassword, city, address, nID )">
+            <div class="row">
+              <input type="hidden" name="Id" id="Id" #Id ngModel value="{{userData.id}}" >
+                <div class="form-group col-md-6">
+                    <label for="firstName">*FirstName : </label>
+                    <input type="text" #firstName ngModel name="firstName" class="form-control input-underline input-lg"
+                        id="firstName" value="{{userData.firstName}}" required>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastName">*LastName : </label>
+                    <input type="text" #lastName ngModel name="lastName" class="form-control input-underline input-lg" id="lastName"
+                        value="{{userData.lastName}}" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="email">*Email : </label>
+                    <input type="email" #email ngModel name="email" class="form-control input-underline input-lg"
+                        id="email" value="{{userData.email}}" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phoneNumber">PhoneNumber : </label>
+                    <input type="text" #phoneNumber ngModel name="phoneNumber" class="form-control input-underline input-lg"
+                        id="phoneNumber" value="{{userData.phoneNumber}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="password">*Password : </label>
+                    <input type="password" #password ngModel name="password" class="form-control input-underline input-lg"
+                        id="password" value="{{userData.password}}">
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="confirmPassword">*ConfirmPassword : </label>
+                    <input type="confirmPassword" #password ngModel name="confirmPassword" class="form-control input-underline input-lg"
+                        id="confirmPassword" >
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="city">City : </label>
+                    <input type="text" #city ngModel name="city" class="form-control input-underline input-lg"
+                        id="city" value="{{userData.city}}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="address">Address : </label>
+                    <input type="text" #address ngModel name="address" class="form-control input-underline input-lg"
+                        id="address" value="{{userData.address}}">
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="nID">NID : </label>
+                    <input type="text" #nID ngModel name="nID" class="form-control input-underline input-lg"
+                        id="nID" value="{{userData.nID}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="File">*Images Upload : </label>
+                    <input type="file" #File ngModel name="File" single (change)="getImagesinfo($event)" class="form-control input-underline input-lg"
+                        id="File" required>
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-outline-primary">Update</button> &nbsp;
+            <a class="btn rounded-btn btn-outline-info" [routerLink]="['/User']">Back</a>
+        </form>
+
+    </div>
+
+</div>
+<!-- card body -->
+  </div>
+</main>
+
+<app-footer></app-footer>

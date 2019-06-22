@@ -1,0 +1,35 @@
+<section class="contackForm" id="contact_us">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Contact Form</h2>
+            </div>
+            <form class="has-validation-callback" #ContactForm=ngForm (ngSubmit)="OnSubmit(contactName, contactEmail,contactSubject,contactMessage)">
+                <div class="col-sm-6">
+                    <div class="input-box">
+                        <label>Your Name <sup>*</sup></label>
+                        <input #contactName ngModel  name="contactName"  type="text" data-validation="required" data-validation-error-msg="Name cannot be blank."
+                        id="contactName">
+                    </div>
+                    <div class="input-box">
+                        <label>Your Email <sup>*</sup></label>
+                        <input #contactEmail ngModel  name="contactEmail"  type="text" data-validation="email" data-validation-error-msg="Incorrect e-mail address"
+                        id="contactEmail">
+                    </div>
+                    <div class="input-box">
+                        <label>Subject <sup>*</sup></label>
+                        <input #contactSubject ngModel  name="contactSubject" type="text" data-validation="required" data-validation-error-msg="Subject cannot be blank."
+                        id="contactSubject">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-box">
+                        <label>Your Message <sup>*</sup></label>
+                        <textarea #contactMessage ngModel  name="contactMessage" data-validation="required" data-validation-error-msg="Message cannot be blank." id="contactMessage"></textarea>
+                    </div>
+                    <button type="submit" class="btn" >Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
